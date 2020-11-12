@@ -1,0 +1,12 @@
+<div class="cards-list">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card">
+        <div class="card_image"> <img src="https://picsum.photos/200" /> </div>
+        <div class="card_title title-white">
+          <p> <%= cocktail.name %> </p>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+

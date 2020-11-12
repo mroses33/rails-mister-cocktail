@@ -13,6 +13,21 @@
   </head>
 
   <body>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+        <%= image_tag "cocktails" %>
+        <p><%= "What're we drinking?" %></p>
+      <% end %>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to "Add a drink", new_cocktail_path, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>
