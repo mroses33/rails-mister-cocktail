@@ -1,0 +1,7 @@
+<h1>Add your ingredients!</h1>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.association :ingredient %>
+  <%= f.input :description, label: "How much?", error: "You must specify this field" %>
+  <%= f.submit "Submit"  %>
+<% end %>
