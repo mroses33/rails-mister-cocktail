@@ -1,12 +1,18 @@
 <div class="cards-list">
     <% @cocktails.each do |cocktail| %>
-      <div class="card">
-        <div class="card_image"> <img src="https://picsum.photos/200" /> </div>
-        <div class="card_title title-white">
-          <p> <%= cocktail.name %> </p>
+      <%= link_to cocktail_path(cocktail) do %>
+        <div class="card">
+          <div class="card_image"> <img src="https://picsum.photos/350" /> </div>
+          <div class="card_title title-white">
+            <p> <%= cocktail.name %> </p>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
 </div>
 
 
+ <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+    <%= image_tag "cocktails" %>
+    <p><%= "What're we drinking?" %></p>
+  <% end %>
