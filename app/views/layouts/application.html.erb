@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="navbar navbar-expand-sm navbar-lewagon">
       <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
         <%= image_tag "cocktails.png" %>
         <p><%= "What're we drinking?" %></p>
@@ -23,7 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "Add a drink", new_cocktail_path, class: "nav-link" %>
+            <%= link_to "Add a drink", new_cocktail_path, class: "nav-link", :style=>'color: rgb(155, 136, 22);' %>
           </li>
         </ul>
       </div>
