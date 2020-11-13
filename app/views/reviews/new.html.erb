@@ -1,9 +1,9 @@
 <h1>Add a review</h1>
 
-<div class="form">
+
   <%= simple_form_for [@cocktail, @review] do |f| %>
     <%= f.input :rating, label: "Cocktail rating" %>
     <%= f.input :content, label: "Review" %>
     <%= f.submit "Add your review"  %>
   <% end %>
-</div>
+
