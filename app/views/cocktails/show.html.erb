@@ -1,19 +1,49 @@
-<h1> <%= @cocktail.name %>  </h1>
+<div class="container d-flex justify-content-between">
+  <div class="drink-title">
+    <% if @cocktail.photo.attached? %>
+      <%= cl_image_tag @cocktail.photo.key, width: 250, height: 250, crop: :fill %>
+    <% else %>
+      <%= image_tag 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/mojito-cocktails-814a3f7.jpg?quality=90&resize=500%2C454' %>
+    <% end %>
+    <h3> <%= @cocktail.name %>  </h3>
+  </div>
 
-
-<% @cocktail.doses.each do |dose| %>
-  <tr>
-    <td><%= dose.ingredient.name %></td>
-    <td><%= dose.description %></td>
-    <td>
-      <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i class="fa fa-trash destroy_dose"></i>
+  <div class="ingredients">
+    <h4>Ingredients
+      <%= link_to new_cocktail_dose_path(@cocktail) do %>
+        <i class="fas fa-plus"></i>
       <% end %>
-    </td>
-  </tr>
-<% end %>
-<%= link_to "Add ingredients to this cocktail", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "See all cocktails", root_path %>
-<%= link_to "Add a review", new_cocktail_review_path(@cocktail) %>
+    </h4>
+    <% @cocktail.doses.each do |dose| %>
+
+      <tr>
+        <td><%= dose.ingredient.name %></td>
+        <td><%= dose.description %></td>
+        <td>
+          <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash destroy_dose"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </div>
+
+  <div class="reviews">
+    <h4>Reviews
+      <%= link_to new_cocktail_review_path(@cocktail) do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </h4>
+    <ul>
+      <% @cocktail.reviews.each do |review| %>
+        <li> <%= review.content %> </li>
+      <% end %>
+    </ul>
+
+
+  </div>
+</div>
+
+
 
 

@@ -3,6 +3,7 @@
 <div class="form">
   <%= simple_form_for @cocktail do |f| %>
     <%= f.input :name, label: "Cocktail name", error: "You must specify a name!" %>
+    <%= f.input :photo, as: :file, label: "Add a photo" %>
     <%= f.submit "Add your ingredients"  %>
   <% end %>
 </div>

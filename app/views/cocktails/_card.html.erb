@@ -2,17 +2,21 @@
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail) do %>
         <div class="card">
-          <div class="card_image"> <img src="https://picsum.photos/350" /> </div>
+          <% if cocktail.photo.attached? %>
+            <div class="card_image"><%= cl_image_tag cocktail.photo.key, width: 250, height: 250, crop: :fill %></div>
+          <% else %>
+            <div class="card_image"><%= image_tag 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/mojito-cocktails-814a3f7.jpg?quality=90&resize=500%2C454' %></div>
+          <% end %>
+          <div class="card_image"><%= @photo_param %></div>
           <div class="card_title title-white">
             <p> <%= cocktail.name %> </p>
+            <p>
+              <% #cocktail.ratings.to_i.times do  %>
+               <!-- <span class="glyphicon glyphicon-star"></span> -->
+              <% #end %>
+            </p>
           </div>
         </div>
       <% end %>
     <% end %>
 </div>
-
-
- <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
-    <%= image_tag "cocktails.png" %>
-    <p><%= "What're we drinking?" %></p>
-  <% end %>
