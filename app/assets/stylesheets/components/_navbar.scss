@@ -12,7 +12,8 @@
   justify-content: space-between;
   background: $dark-green;
   font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase
+  text-transform: uppercase;
+  color: $tan;
 }
 
 .navbar-lewagon .navbar-brand p {
@@ -26,5 +27,10 @@
 
 .navbar-brand {
   font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase
+  text-transform: uppercase;
+  color: $olive;
+}
+
+.navbar-lewagon .navbar-link  {
+  color: $tan;
 }

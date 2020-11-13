@@ -21,6 +21,10 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def score
+    # @cocktail.ratings
+  end
+
   private
 
   def cocktail_params
